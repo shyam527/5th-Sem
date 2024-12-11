@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>
+            Dynamic Stacking of Images
+        </title>
+        <style>
+            #i1{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+
+            #i2{
+                position: absolute;
+                top: 50;
+                left: 100;
+                z-index: 0;
+            }
+
+            #i3{
+                position: absolute;
+                top: 100;
+                left: 200;
+                z-index: 0;
+            }
+        </style>
+
+        <script>
+            function totop(newTop){
+                var domTop=document.getElementById(Top).style;
+                var domNew=document.getElementById(newTop).style;
+                domTop.zIndex="0";
+                domNew.zIndex="10";
+                Top=newTop;
+            }
+        </script>
+    </head>
+    <body>
+        <p>
+            <img class="img1" id="i1" src="/img/img1.jpg" onclick="totop('i1')">
+            <img class="img2" id="i2" src="/img/img2.jpg" onclick="totop('i2')">
+            <img class="img3" id="i3" src="/img/img3.jpg" onclick="totop('i3')">
+        </p>
+    </body>
+</html>

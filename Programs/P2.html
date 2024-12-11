@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Evaluation</title>
+        <script>function cal() {
+            document.calculate.res.value=eval(document.calculate.exp.value);
+        }
+        </script>
+    </head>
+    <body>
+        <form name="calculate">
+            Enter the expression : 
+            <input type="text" name="exp">
+            <input type="button" value="Calculate" onclick="cal();"><br><br>
+
+            Result :
+            <input type="text" name="res">
+            <input type="reset">
+        </form>
+    </body>
+</html>
+                

@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Declaration of Results</title>
+        <script>
+            function findresult(){
+                var result="";
+                var grade="";
+                var studname=document.fomstudent.sname.value;
+                var m1=parseInt(document.fomstudent.mark1.value);
+                var m2=parseInt(document.fomstudent.mark2.value);
+                var m3=parseInt(document.fomstudent.mark3.value);
+                var m4=parseInt(document.fomstudent.mark4.value);
+                var m5=parseInt(document.fomstudent.mark5.value);
+                var m6=parseInt(document.fomstudent.mark6.value);
+                var total=(m1+m2+m3+m4+m5+m6);
+                var avg=Math.round(total/6);
+                if(m1<40||m2<40||m3<40||m4<40||m5<40||m6<40)
+                    result="FAIL";
+                else
+                {
+                    var mm=avg;
+                    if(mm>=80){
+                        grade="A";
+                        result="Distinction";
+                    }
+                    else if(mm>=60){
+                        grade="B";
+                        result="First Class";
+                    }
+                    else if(mm>=50){
+                        grade="C";
+                        result="Second class";
+                    }
+                    else if(mm>=40){
+                        grade="D";
+                        result="Pass";
+                    }
+                    else if(mm<40){
+                        grade="F";
+                        result="Fail";
+                    }
+                }
+                document.write("<br><pre>----------------------<br>");
+                document.write("<h1>RESULT SHEET</h1>");
+                document.write("---------------------------<br>");
+                document.write("<br>Student Name::<b>" + studname + "</b>");
+                document.write("<br>Total Marks::<b>" + total + "/600</b>");
+                document.write("<br>Average Marks::<b>" + avg + "</b>");
+                document.write("<br>Result::<b>" + result + "</b>");
+                document.write("<br>Grade::<b>" + grade + "</b>");
+                document.write("<br>----------------------------</pre><br>");
+                }
+        </script>
+    </head>
+    <body bgcolor="cyan">
+        <form name="fomstudent">
+        <center><b><h1>STUDENT INFORMATION</h1></b></center><br><br>
+        <h2>Please fill in the details:</h2>
+        <pre>
+            Student Name:<input type="text" name="sname"><br>
+            Subject1: <input type="text" name="mark1"><br>
+            Subject2: <input type="text" name="mark2"><br>
+            Subject3: <input type="text" name="mark3"><br>
+            Subject4: <input type="text" name="mark4"><br>
+            Subject5: <input type="text" name="mark5"><br>
+            Subject6: <input type="text" name="mark6"><br>
+        </pre>
+        <input type="button" value="submit" onclick="findresult();">
+        </form>
+    </body>
+</html>
